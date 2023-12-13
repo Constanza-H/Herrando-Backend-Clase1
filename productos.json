@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Macarrons",
+    "description": "tapitas con harina de almendras y rellenos varios",
+    "price": 150,
+    "thumbnail": "sin imagen",
+    "code": "00004",
+    "stock": 150
+  }
+]
