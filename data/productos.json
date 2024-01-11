@@ -1,0 +1,246 @@
+[
+  
+    {
+      "id": 1,
+      "title": "Torta Matilda",
+      "description": "Torta húmeda de chocolate, rellena de DDL y cubierta con crema bariloche",
+      "code": "CHOC001",
+      "price": 18000,
+      "status": true,
+      "stock": 25,
+      "category": "Tortas",
+      "thumbnails": []
+    },
+    {
+      "id": 2,
+      "title": "Torta Rogel",
+      "description": "Torta con capas de masa finitas y crocantes, rellena de DDL y cubierta con merengue italiano",
+      "code": "ROG001",
+      "price": 16500,
+      "status": true,
+      "stock": 25,
+      "category": "Tortas",
+      "thumbnails": []
+    },
+    {
+      "id": 3,
+      "title": "Torta Clásica de Vainilla",
+      "description": "Torta con bizcochuelo húmedo de vainilla, rellena de DDL y cubierta con merengue italiano",
+      "code": "VAN001",
+      "price": 17000,
+      "status": true,
+      "stock": 30,
+      "category": "Tortas",
+      "thumbnails": []
+    },
+    {
+      "id": 4,
+      "title": "Torta Clásica de Chocolate",
+      "description": "Torta con bizcochuelo húmedo de chocolate, rellena de DDL y cubierta con merengue italiano",
+      "code": "CHO001",
+      "price": 17000,
+      "status": true,
+      "stock": 15,
+      "category": "Tortas",
+      "thumbnails": []
+    },
+    {
+      "id": 5,
+      "title": "Lemon Pie",
+      "description": "Base de vainilla, rellena con curd de limón y cubierta con merengue italiano",
+      "code": "LEMON001",
+      "price": 12500,
+      "status": true,
+      "stock": 11,
+      "category": "Tartas",
+      "thumbnails": []
+    },
+    {
+      "id": 6,
+      "title": "Tarta Havanette",
+      "description": "Base de vainilla, rellena con DDL y cubierta con ganache de chocolate",
+      "code": "HAV001",
+      "price": 12500,
+      "status": true,
+      "stock": 23,
+      "category": "Tartas",
+      "thumbnails": []
+    },
+    {
+      "id": 7,
+      "title": "Tarta Frutas de Estación",
+      "description": "Base de vainilla, rellena con DDL, Crema Pastelera y cubierta con frutas de estación",
+      "code": "FRUT001",
+      "price": 13000,
+      "status": true,
+      "stock": 5,
+      "category": "Tartas",
+      "thumbnails": []
+    },
+    {
+      "id": 8,
+      "title": "Cheesecake",
+      "description": "Base de galletitas de vainilla, crema de queso y cubierta de una reducción de frutos rojos",
+      "code": "CHEESE001",
+      "price": 16000,
+      "status": true,
+      "stock": 20,
+      "category": "Postres",
+      "thumbnails": []
+    },
+    {
+      "id": 9,
+      "title": "Chocotorta",
+      "description": "Capas de galletas de chocolate intercaladas con mezcla chocolina",
+      "code": "CHOCO001",
+      "price": 15500,
+      "status": true,
+      "stock": 13,
+      "category": "Postres",
+      "thumbnails": []
+    },
+    {
+      "id": 10,
+      "title": "Tiramisú",
+      "description": "Base de vainillas, relleno de crema mascarpone y cubierto con cacao amargo",
+      "code": "TIRA001",
+      "price": 15500,
+      "status": true,
+      "stock": 16,
+      "category": "Postres",
+      "thumbnails": []
+    },
+    {
+      "id": 11,
+      "title": "Alfajor de Dulce de Leche",
+      "description": "Tapas de vainilla, relleno con DDL con baño de chocolate",
+      "code": "ALFA001",
+      "price": 750,
+      "status": true,
+      "stock": 60,
+      "category": "Alfajores",
+      "thumbnails": []
+    },
+    {
+      "id": 12,
+      "title": "Alfajor de Nuez",
+      "description": "Tapas de nueces, relleno con DDL y alrededor nueces picadas",
+      "code": "NUEZ001",
+      "price": 900,
+      "status": true,
+      "stock": 52,
+      "category": "Alfajores",
+      "thumbnails": []
+    },
+    {
+      "id": 13,
+      "title": "Alfajor de Maicena",
+      "description": "Tapas de vainilla, relleno con DDL y alrededor coco rallado",
+      "code": "MAICE001",
+      "price": 750,
+      "status": true,
+      "stock": 63,
+      "category": "Alfajores",
+      "thumbnails": []
+    },
+    {
+      "id": 14,
+      "title": "Cookie con chips de chocolate",
+      "description": "Masa de vainilla con chips de chocolate",
+      "code": "COOKIECHOC001",
+      "price": 750,
+      "status": true,
+      "stock": 50,
+      "category": "Cookies",
+      "thumbnails": []
+    },
+    {
+      "id": 15,
+      "title": "Cookie de brownie",
+      "description": "Masa de brownie con chocolate intenso",
+      "code": "BROWNIE001",
+      "price": 750,
+      "status": true,
+      "stock": 55,
+      "category": "Cookies",
+      "thumbnails": []
+    },
+    {
+      "id": 16,
+      "title": "Cookie de almendras",
+      "description": "Masa de vainilla con almendras",
+      "code": "ALMENDRA001",
+      "price": 750,
+      "status": true,
+      "stock": 58,
+      "category": "Cookies",
+      "thumbnails": []
+    },
+    {
+      "id": 17,
+      "title": "Pan de salvado con semillas",
+      "description": "Pan de salvado integral con mix de semillas",
+      "code": "SALVADO001",
+      "price": 2300,
+      "status": true,
+      "stock": 19,
+      "category": "Panadería",
+      "thumbnails": []
+    },
+    {
+      "id": 18,
+      "title": "Croissant de almendras",
+      "description": "Croissant dulce con centro de crema de almendras",
+      "code": "CROISSANTALM001",
+      "price": 1900,
+      "status": true,
+      "stock": 18,
+      "category": "Panadería",
+      "thumbnails": []
+    },
+    {
+      "id": 19,
+      "title": "Pan de masa madre",
+      "description": "Masa de vainilla con almendras",
+      "code": "MASAMADRE001",
+      "price": 750,
+      "status": true,
+      "stock": 25,
+      "category": "Panadería",
+      "thumbnails": []
+    },
+    {
+      "id": 20,
+      "title": "Limonada con menta y jengibre",
+      "description": "Limonada frozen con menta y jengibre",
+      "code": "LIMONADA001",
+      "price": 1700,
+      "status": true,
+      "stock": 60,
+      "category": "Bebidas",
+      "thumbnails": []
+    },
+    {
+      "id": 21,
+      "title": "Latte",
+      "description": "Mezcla de café espresso y leche vaporizada",
+      "code": "LATTE001",
+      "price": 1900,
+      "status": true,
+      "stock": 60,
+      "category": "Bebidas",
+      "thumbnails": []
+    },
+    {
+      "id": 22,
+      "title": "Flat White",
+      "description": "Espresso con una pequeña cantidad de microespuma de leche vaporizada",
+      "code": "FLATWHITE001",
+      "price": 1750,
+      "status": true,
+      "stock": 42,
+      "category": "Bebidas",
+      "thumbnails": []
+    }
+  ]
+  
