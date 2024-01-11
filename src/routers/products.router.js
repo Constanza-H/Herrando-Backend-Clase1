@@ -5,20 +5,28 @@ import path from 'path';
 const productsRouter = express.Router();
 const productosFilePath = path.resolve(__dirname, 'productos.json');
 
-let products = [];
+async function initializeProducts() {
+  try {
+    const data = await fs.readFile(productosFilePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error al leer productos.json', error);
+    return [];
+  }
+}
+
+let products = await initializeProducts();
 
 async function initializeProducts() {
-    try {
-      const data = await fs.readFile(productosFilePath, 'utf-8');
-      products = JSON.parse(data);
-    } catch (error) {
-      console.error('Error al leer productos.json', error);
-      products = [];
-    }
+  try {
+    const data = await fs.readFile(productosFilePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error al leer productos.json', error);
+    return [];
   }
-  
-  initializeProducts();
-  
+}
+
 productsRouter.get('/', async (req, res) => {
   try {
     const data = await fs.readFile(productosFilePath, 'utf-8');
@@ -26,26 +34,10 @@ productsRouter.get('/', async (req, res) => {
     res.json(products);
   } catch (error) {
     console.error('Error al leer productos:', error);
-    res.status(500).json({ error: 'Error interno del servidor' });
+    res.status(500).json({ error: `Error interno del servidor: ${error.message}` });
   }
 });
 
-productsRouter.get('/:pid', async (req, res) => {
-  try {
-    const data = await fs.readFile(productosFilePath, 'utf-8');
-    const products = JSON.parse(data);
-    const product = products.find((p) => p.id === Number(req.params.pid));
-
-    if (product) {
-      res.json(product);
-    } else {
-      res.status(404).json({ error: 'Producto no encontrado' });
-    }
-  } catch (error) {
-    console.error('Error al leer productos:', error);
-    res.status(500).json({ error: 'Error interno del servidor' });
-  }
-});
 
 // agregar nuevo producto
 productsRouter.post('/', async (req, res) => {
