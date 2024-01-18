@@ -3,205 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Productos</title>
 </head>
 <body>
-    <section id="productos">
-        <h2>Nuestros Productos</h2>
-    
-        <div class="filtro">
-            <label for="grupo">Filtrar por grupo:</label>
-            <select id="grupo" onchange="filtrarPorGrupo()">
-                <option value="todos">Todos</option>
-                <option value="tortas">Tortas</option>
-                <option value="tartas">Tartas</option>
-                <option value="postres">Postres</option>
-                <option value="alfajores">Alfajores</option>
-                <option value="cookies">Cookies</option>
-                <option value="panaderia">Panadería</option>
-                <option value="bebidas">Bebidas</option>
-            </select>
-        </div>
-        <div class="productos">
-          
-            <div class="producto1" data-grupo="tortas">
-                <img src="" alt="Torta Matilda">
-                <h3>Torta Matildda</h3>
-                <p>Torta húmeda de chocolate, rellena de DDL y cubierta con crema bariloche</p>
-                <p class="precio">$18.000</p>
-                <button onclick="agregarAlCarrito('Torta Matilda')">Agregar al Carrito</button>
+    <header>
+        <div class="logo">Pastelería Logo</div>
+        <nav>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./productos.html">Productos</a></li>
+                <li><a href="./carrito.html">Carrito</a></li>
+                <li><a href="./reservas.html">Reservas</a></li>
+                <li><a href="./sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+        
+            <div class="filtro">
+                <label for="grupo">Filtrar por grupo:</label>
+                <select id="grupo" onchange="filtrarPorGrupo()">
+                    <option value="todos">Todos</option>
+                    <option value="tortas">Tortas</option>
+                    <option value="tartas">Tartas</option>
+                    <option value="postres">Postres</option>
+                    <option value="alfajores">Alfajores</option>
+                    <option value="cookies">Cookies</option>
+                    <option value="panaderia">Panadería</option>
+                    <option value="bebidas">Bebidas</option>
+                </select>
             </div>
-    
-            <div class="producto2" data-grupo="tortas">
-                <img src="" alt="Torta Rogel">
-                <h3>Torta Rogel</h3>
-                <p>Torta con capas de masa finitas y crocantes, rellena de DDL y cubierta con merengue italiano</p>
-                <p class="precio">$16.500</p>
-                <button onclick="agregarAlCarrito('Torta Rogel')">Agregar al Carrito</button>
+            <div class="productos">
+              
+                <div class="producto_tarjeta" data-grupo="tortas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Torta Matilda">
+                    <h3>Torta Matildda</h3>
+                    <p>Torta húmeda de chocolate, rellena de DDL y cubierta con crema bariloche</p>
+                    <p class="precio">$18.000</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Torta Matilda')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="tortas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Torta Rogel">
+                    <h3>Torta Rogel</h3>
+                    <p>Torta con capas de masa finitas y crocantes, rellena de DDL y cubierta con merengue italiano</p>
+                    <p class="precio">$16.500</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Torta Rogel')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="tortas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Torta Clasica de Vainilla ">
+                    <h3>Torta Clásica de Vainilla</h3>
+                    <p>Torta con bizcochuelo húmedo de vainilla, rellena de DDL y cubierta con merengue italiano</p>
+                    <p class="precio">$17.000</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Torta Clasica de Vainilla')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="tortas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Torta Clasica de Chocolate ">
+                    <h3>Torta Clásica de Chocolate</h3>
+                    <p>Torta con bizcochuelo húmedo de chocolate, rellena de DDL y cubierta con merengue italiano</p>
+                    <p class="precio">$17.000</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Torta Clasica de Chocolate')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="tartas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Lemon Pie ">
+                    <h3>Lemon Pie</h3>
+                    <p>Base de vainilla, rellena con curd de limon y cubierta con merengue italiano</p>
+                    <p class="precio">$12.500</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Lemon Pie')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="tartas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Tarta Havanette">
+                    <h3>Tarta Havanette</h3>
+                    <p>Base de vainilla, rellena con DDL y cubierta con ganache de chocolate</p>
+                    <p class="precio">$12.500</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Tarta Havanette')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="tartas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Tarta Frutas de Estación">
+                    <h3>Tarta Frutas de Estación</h3>
+                    <p>Base de vainilla, rellena con DDL, Crema Pastelera y cubierta con frutas de estación</p>
+                    <p class="precio">$13.000</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Tarta Frutas de Estación')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="postres">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Cheesecake">
+                    <h3>Cheesecake</h3>
+                    <p>Base de galletitas de vainilla, crema de queso y cubierta de una reducción de frutos rojos</p>
+                    <p class="precio">$16.000</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Cheesecake')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="postres">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Chocotorta">
+                    <h3>Chocotorta</h3>
+                    <p>Capas de galletas de chocolate intercaldas con mezcla chocolina </p>
+                    <p class="precio">$15.500</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Chocotorta')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="postres">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Tiramisú">
+                    <h3>Tiramisú</h3>
+                    <p>Base de vainillas, relleno de crema mascarpone y cubierto con cacao amargo </p>
+                    <p class="precio">$15.500</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Tiramisú')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="alfajores">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Alfajor de Dulce de Leche">
+                    <h3>Alfajor de Dulce de Leche</h3>
+                    <p>Tapas de vainilla, relleno con DDL con baño de chocolate</p>
+                    <p class="precio">$750</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Alfajor de Nuez')">Agregar al Carrito</button>
+                </div>
+               
+                <div class="producto_tarjeta" data-grupo="alfajores">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Alfajor de Nuez">
+                    <h3>Alfajor de Nuez </h3>
+                    <p>Tapas de nueces, relleno con DDL y alrededor nueces picadas</p>
+                    <p class="precio">$900</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Alfajor de Dulce de Leche')">Agregar al Carrito</button>
+                </div>
+             
+                <div class="producto _tarjeta" data-grupo="alfajores">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Alfajor de Maicena">
+                    <h3>Alfajor de Maicena </h3>
+                    <p>Tapas de vainilla, relleno con DDL y alrededor coco rallado</p>
+                    <p class="precio">$750</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="cookies">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Cookie con chips de chocolate">
+                    <h3>Cookie con chips de chocolate </h3>
+                    <p>masa de vainilla con chips de chocolate</p>
+                    <p class="precio">$750</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Cookie con chips de chocolate')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="cookies">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Cookie de brownie">
+                    <h3>Cookie de brownie</h3>
+                    <p>masa de brownie con chocolate intenso</p>
+                    <p class="precio">$750</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="cookies">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Cookie de almendras">
+                    <h3>Cookie de almendras </h3>
+                    <p>masa de vainilla con almendras</p>
+                    <p class="precio">$750</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="panaderia">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Pan de salvado con semillas">
+                    <h3>Pan de salvado con semillas </h3>
+                    <p>Pan de salvado integral con mix de semillas</p>
+                    <p class="precio">$2300</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Pan de salvado')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="panaderia">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Croissant de almendras">
+                    <h3>Croissant de almendras</h3>
+                    <p>Croissant dulce con centro de crema de almendras</p>
+                    <p class="precio">$1900</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Croissant de almendras')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="panaderia">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Pan de masa madre">
+                    <h3>Pan de masa madre</h3>
+                    <p>masa de vainilla con almendras</p>
+                    <p class="precio">$750</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Pan de masa madre')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="bebidas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Limonada con menta y jenjibre">
+                    <h3>Limonada con menta y jenjibre</h3>
+                    <p>Limonada frozen con menta y jenjibre</p>
+                    <p class="precio">$1700</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Limonada con menta y jenjibre')">Agregar al Carrito</button>
+                </div>
+        
+        
+                <div class="producto_tarjeta" data-grupo="bebidas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Latte">
+                    <h3>Latte </h3>
+                    <p>Mezcla de café espresso y leche vaporizada</p>
+                    <p class="precio">$1900</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Latte')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto_tarjeta" data-grupo="bebidas">
+                    <img src="./img/food-photographer-jennifer-pallian-gRZYR210m0U-unsplash (1).jpg red.jpg" alt="Flat white">
+                    <h3>Espresso con una pequeña cantidad de microespuma de leche vaporizada</h3>
+                    <p>masa de vainilla con almendras</p>
+                    <p class="precio">$1750</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button onclick="agregarAlCarrito('Flat white')">Agregar al Carrito</button>
+                </div>
             </div>
-    
-            <div class="producto3" data-grupo="tortas">
-                <img src="" alt="Torta Clasica de Vainilla ">
-                <h3>Torta Clásica de Vainilla</h3>
-                <p>Torta con bizcochuelo húmedo de vainilla, rellena de DDL y cubierta con merengue italiano</p>
-                <p class="precio">$17.000</p>
-                <button onclick="agregarAlCarrito('Torta Clasica de Vainilla')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto4" data-grupo="tortas">
-                <img src="" alt="Torta Clasica de Chocolate ">
-                <h3>Torta Clásica de Chocolate</h3>
-                <p>Torta con bizcochuelo húmedo de chocolate, rellena de DDL y cubierta con merengue italiano</p>
-                <p class="precio">$17.000</p>
-                <button onclick="agregarAlCarrito('Torta Clasica de Chocolate')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto5" data-grupo="tartas">
-                <img src="" alt="Lemon Pie ">
-                <h3>Lemon Pie</h3>
-                <p>Base de vainilla, rellena con curd de limon y cubierta con merengue italiano</p>
-                <p class="precio">$12.500</p>
-                <button onclick="agregarAlCarrito('Lemon Pie')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto6" data-grupo="tartas">
-                <img src="" alt="Tarta Havanette">
-                <h3>Tarta Havanette</h3>
-                <p>Base de vainilla, rellena con DDL y cubierta con ganache de chocolate</p>
-                <p class="precio">$12.500</p>
-                <button onclick="agregarAlCarrito('Tarta Havanette')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto7" data-grupo="tartas">
-                <img src="" alt="Tarta Frutas de Estación">
-                <h3>Tarta Frutas de Estación</h3>
-                <p>Base de vainilla, rellena con DDL, Crema Pastelera y cubierta con frutas de estación</p>
-                <p class="precio">$13.000</p>
-                <button onclick="agregarAlCarrito('Tarta Frutas de Estación')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto8" data-grupo="postres">
-                <img src="" alt="Cheesecake">
-                <h3>Cheesecake</h3>
-                <p>Base de galletitas de vainilla, crema de queso y cubierta de una reducción de frutos rojos</p>
-                <p class="precio">$16.000</p>
-                <button onclick="agregarAlCarrito('Cheesecake')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto9" data-grupo="postres">
-                <img src="" alt="Chocotorta">
-                <h3>Chocotorta</h3>
-                <p>Capas de galletas de chocolate intercaldas con mezcla chocolina </p>
-                <p class="precio">$15.500</p>
-                <button onclick="agregarAlCarrito('Chocotorta')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto10" data-grupo="postres">
-                <img src="" alt="Tiramisú">
-                <h3>Tiramisú</h3>
-                <p>Base de vainillas, relleno de crema mascarpone y cubierto con cacao amargo </p>
-                <p class="precio">$15.500</p>
-                <button onclick="agregarAlCarrito('Tiramisú')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto11" data-grupo="alfajores">
-                <img src="" alt="Alfajor de Dulce de Leche">
-                <h3>Alfajor de Dulce de Leche</h3>
-                <p>Tapas de vainilla, relleno con DDL con baño de chocolate</p>
-                <p class="precio">$750</p>
-                <button onclick="agregarAlCarrito('Alfajor de Nuez')">Agregar al Carrito</button>
-            </div>
-           
-            <div class="producto12" data-grupo="alfajores">
-                <img src="" alt="Alfajor de Nuez">
-                <h3>Alfajor de Nuez </h3>
-                <p>Tapas de nueces, relleno con DDL y alrededor nueces picadas</p>
-                <p class="precio">$900</p>
-                <button onclick="agregarAlCarrito('Alfajor de Dulce de Leche')">Agregar al Carrito</button>
-            </div>
-         
-            <div class="producto13" data-grupo="alfajores">
-                <img src="" alt="Alfajor de Maicena">
-                <h3>Alfajor de Maicena </h3>
-                <p>Tapas de vainilla, relleno con DDL y alrededor coco rallado</p>
-                <p class="precio">$750</p>
-                <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto14" data-grupo="cookies">
-                <img src="" alt="Cookie con chips de chocolate">
-                <h3>Cookie con chips de chocolate </h3>
-                <p>masa de vainilla con chips de chocolate</p>
-                <p class="precio">$750</p>
-                <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto15" data-grupo="cookies">
-                <img src="" alt="Cookie de brownie">
-                <h3>Cookie de brownie</h3>
-                <p>masa de brownie con chocolate intenso</p>
-                <p class="precio">$750</p>
-                <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto16" data-grupo="cookies">
-                <img src="" alt="Cookie de almendras">
-                <h3>Cookie de almendras </h3>
-                <p>masa de vainilla con almendras</p>
-                <p class="precio">$750</p>
-                <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto17" data-grupo="panaderia">
-                <img src="" alt="Pan de salvado con semillas">
-                <h3>Pan de salvado con semillas </h3>
-                <p>Pan de salvado integral con mix de semillas</p>
-                <p class="precio">$2300</p>
-                <button onclick="agregarAlCarrito('Pan de salvado')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto18" data-grupo="panaderia">
-                <img src="" alt="Croissant de almendras">
-                <h3>Croissant de almendras</h3>
-                <p>Croissant dulce con centro de crema de almendras</p>
-                <p class="precio">$1900</p>
-                <button onclick="agregarAlCarrito('Croissant de almendras')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto19" data-grupo="panaderia">
-                <img src="" alt="Pan de masa madre">
-                <h3>Cookie de almendras </h3>
-                <p>masa de vainilla con almendras</p>
-                <p class="precio">$750</p>
-                <button onclick="agregarAlCarrito('Alfajor de Maicena')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto20" data-grupo="bebidas">
-                <img src="" alt="Limonada con menta y jenjibre">
-                <h3>Limonada con menta y jenjibre</h3>
-                <p>Limonada frozen con menta y jenjibre</p>
-                <p class="precio">$1700</p>
-                <button onclick="agregarAlCarrito('Limonada con menta y jenjibre')">Agregar al Carrito</button>
-            </div>
-    
-    
-            <div class="producto21" data-grupo="bebidas">
-                <img src="" alt="Latte">
-                <h3>Latte </h3>
-                <p>Mezcla de café espresso y leche vaporizada</p>
-                <p class="precio">$1900</p>
-                <button onclick="agregarAlCarrito('Latte')">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto22" data-grupo="bebidas">
-                <img src="" alt="Flat white">
-                <h3>Espresso con una pequeña cantidad de microespuma de leche vaporizada</h3>
-                <p>masa de vainilla con almendras</p>
-                <p class="precio">$1750</p>
-                <button onclick="agregarAlCarrito('Flat white')">Agregar al Carrito</button>
-            </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
     <script src="../app.js"></script>
 </body>
 </html>

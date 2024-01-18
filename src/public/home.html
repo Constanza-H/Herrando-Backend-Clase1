@@ -3,47 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Home</title>
 </head>
 <body>
-    <section id="home">
-        <div class="destacado">
-            <h1>Bienvenido a Trata que sean Dos</h1>
-            <p>Descubre nuestros deliciosos productos de pastelería</p>
-        </div>
-    
-        <div class="productos-destacados">
-            <h2>Productos Destacados</h2>
-            <div class="producto">
-                <img src="imagen_torta.jpg" alt="Torta de Chocolate">
-                <h3>Torta de Chocolate</h3>
-                <p>Una exquisita torta de chocolate que deleitará tu paladar.</p>
-                <p class="precio">$18000</p>
-                <button onclick="agregarAlCarrito('Torta de Chocolate')">Agregar al Carrito</button>
+    <header>
+        <div class="logo">Pastelería Logo</div>
+        <nav>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./productos.html">Productos</a></li>
+                <li><a href="./carrito.html">Carrito</a></li>
+                <li><a href="./reservas.html">Reservas</a></li>
+                <li><a href="./sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="destacado">
+                <h1>Bienvenido a Trata que sean Dos</h1>
+                <p>Descubre nuestros deliciosos productos de pastelería</p>
             </div>
-    
-            <div class="producto">
-                <img src="imagen_alfajor.jpg" alt="Alfajor de Dulce de Leche ">
-                <h3>Alfajor de Dulce de Leche</h3>
-                <p>Delicioso alfajor relleno con dulce de leche, una delicia única.</p>
-                <p class="precio">$5.99</p>
-                <button onclick="agregarAlCarrito('Alfajor de Dulce de Leche')">Agregar al Carrito</button>
+        
+            <div class="productos-destacados">
+                <h2>Productos Destacados</h2>
+                <div class="producto">
+                    <img src="imagen_torta.jpg" alt="Torta de Chocolate">
+                    <h3>Torta de Chocolate</h3>
+                    <p>Una exquisita torta de chocolate que deleitará tu paladar.</p>
+                    <p class="precio">$18000</p>
+                    <button onclick="agregarAlCarrito('Torta de Chocolate')">Agregar al Carrito</button>
+                </div>
+        
+                <div class="producto">
+                    <img src="imagen_alfajor.jpg" alt="Alfajor de Dulce de Leche ">
+                    <h3>Alfajor de Dulce de Leche</h3>
+                    <p>Delicioso alfajor relleno con dulce de leche, una delicia única.</p>
+                    <p class="precio">$5.99</p>
+                    <button onclick="agregarAlCarrito('Alfajor de Dulce de Leche')">Agregar al Carrito</button>
+                </div>
             </div>
-        </div>
-    
-        <div class="noticias-promociones">
-            <h2>Últimas Noticias y Promociones</h2>
-            <div class="noticia">
-                <h3>¡Nuevo Sabor!</h3>
-                <p>Presentamos nuestro nuevo pastel de frutas frescas. ¡Ven y pruébalo!</p>
+        
+            <div class="noticias-promociones">
+                <h2>Últimas Noticias y Promociones</h2>
+                <div class="noticia">
+                    <h3>¡Nuevo Sabor!</h3>
+                    <p>Presentamos nuestro nuevo pastel de frutas frescas. ¡Ven y pruébalo!</p>
+                </div>
+        
+                <div class="promocion">
+                    <h3>Oferta Especial</h3>
+                    <p>Compra una docena de cookies y recibe un descuento del 20%. ¡Solo por hoy!</p>
+                </div>
             </div>
+        </section>
+    </main>
     
-            <div class="promocion">
-                <h3>Oferta Especial</h3>
-                <p>Compra una docena de cookies y recibe un descuento del 20%. ¡Solo por hoy!</p>
-            </div>
-        </div>
-    </section>
     <script src="../app.js"></script>
 </body>
 </html>

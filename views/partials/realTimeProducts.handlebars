@@ -1,0 +1,19 @@
+{{!< layouts/main}}
+
+<h1>Lista de Productos</h1>
+
+<form id="productForm">
+    <input type="text" id="productName" placeholder="Nombre del producto" required>
+    <button type="button" onclick="createProduct()">Agregar Producto</button>
+</form>
+
+{{> partials/product-list}}
+
+<script>
+    const socket = io();
+
+    function createProduct() {
+        const productName = document.getElementById('productName').value;
+        socket.emit('createProduct', { name: productName });
+    }
+</script>
