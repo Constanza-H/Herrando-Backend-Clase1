@@ -66,6 +66,32 @@ io.on('connection', (socket) => {
 
 app.use(express.json());
 
+app.get('/login', (req, res) => {
+  res.render('login'); 
+});
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  if (email === 'usuario@correo.com' && password === 'contrasena') {
+    User.findOne({ email, password }, (err, user) => {
+      if (err || !user) {
+        return res.redirect('/login');
+      }
+  
+      if (user.role !== 'admin') {
+        user.role = 'usuario';
+        user.save((err) => {
+          if (err) {
+            console.error('Error al guardar el rol del usuario:', err);
+          }
+        });
+      }
+  
+      req.session.user = { email, role: user.role };
+      res.redirect('/products');
+    });
+  }});
+
 app.use('/api/products', productsRouter);
 
 app.listen(PORT, () => {
