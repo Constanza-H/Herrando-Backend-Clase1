@@ -4,7 +4,12 @@ import http from 'http';
 import { Server } from 'socket.io';
 import productsRouter from './routes/products.router.js';
 import cartsRouter from './routes/carts.router.js';
-
+import passport from 'passport';
+import session from 'express-session';
+import bcrypt from 'bcrypt';
+import GitHubStrategy from 'passport-github';
+import LocalStrategy from 'passport-local';
+import { User } from './models/user';
 
 
 const app = express();
@@ -17,6 +22,10 @@ app.engine('handlebars', exphbs());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
+
+app.use(session({ secret: 'tu_secreto', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/api/carts', cartsRouter(io));
 
@@ -64,6 +73,62 @@ io.on('connection', (socket) => {
   }
 });
 
+app.use(session({ secret: 'tu_secreto', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id, (err, user) => {
+    done(err, user);
+  });
+});
+
+passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+  User.findOne({ email }, (err, user) => {
+    if (err) return done(err);
+    if (!user) return done(null, false, { message: 'Usuario no encontrado' });
+    bcrypt.compare(password, user.password, (err, result) => {
+      if (err) return done(err);
+      if (!result) return done(null, false, { message: 'Contraseña incorrecta' });
+
+      return done(null, user);
+    });
+  });
+}));
+
+passport.use(new GitHubStrategy({
+  clientID: 'fa34750dcf0026829a05',
+  clientSecret: '7944ece65c6ae2d58bfc1b46a899e07b70677fd2',
+  callbackURL: 'http://localhost:8080/api/sessions/githubcallback', 
+}, (accessToken, refreshToken, profile, done) => {
+  User.findOneAndUpdate(
+    { githubId: profile.id },
+    {
+      githubId: profile.id,
+      username: profile.username,
+      displayName: profile.displayName,
+    },
+    { upsert: true, new: true },
+    (err, user) => {
+      if (err) return done(err);
+      return done(null, user);
+    }
+  );
+}));
+
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id, (err, user) => {
+    done(err, user);
+  });
+});
 app.use(express.json());
 
 app.get('/login', (req, res) => {
