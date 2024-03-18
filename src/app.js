@@ -9,14 +9,42 @@ import session from 'express-session';
 import bcrypt from 'bcrypt';
 import GitHubStrategy from 'passport-github';
 import LocalStrategy from 'passport-local';
+import jwtStrategy from './jwtStrategy';
 import { User } from './models/user';
+import mongoose from 'mongoose';
+import User from './models/user.model.js';
+import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
+import { User } from './models/user';
+import { jwtSecret } from './config';
 
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+const config = require('./config');
 
 const PORT = 8080;
+
+const jwtOptions = {
+  secretOrKey: jwtSecret,
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+};
+const jwtSecret = config.jwtSecret;
+console.log('Secreto JWT:', jwtSecret);
+
+passport.use(new JwtStrategy(jwtOptions, (jwtPayload, done) => {
+  User.findById(jwtPayload.id, (err, user) => {
+    if (err) {
+      return done(err, false);
+    }
+    if (user) {
+      return done(null, user);
+    } else {
+      return done(null, false);
+    }
+  });
+}));
+
 
 app.engine('handlebars', exphbs());
 app.set('views', __dirname + '/views');
@@ -119,6 +147,22 @@ passport.use(new GitHubStrategy({
   );
 }));
 
+passport.use(new LocalStrategy({
+  usernameField: 'email'
+}, (email, password, done) => {
+  User.findOne({ email: email }, (err, user) => {
+      if (err) { return done(err); }
+      if (!user) {
+          return done(null, false, { message: 'Usuario no encontrado' });
+      }
+      bcrypt.compare(password, user.password, (err, result) => {
+          if (err) return done(err);
+          if (!result) return done(null, false, { message: 'Contraseña incorrecta' });
+          return done(null, user);
+      });
+  });
+}));
+passport.use(jwtStrategy);
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -158,6 +202,18 @@ app.post('/login', (req, res) => {
   }});
 
 app.use('/api/products', productsRouter);
+
+app.get('/api/some-protected-route', passport.authenticate('jwt', { session: false }), (req, res) => {
+  res.json({ message: 'Acceso concedido a la ruta protegida.' });
+});
+
+app.get('/api/sessions/current', (req, res) => {
+  if (req.user) {
+      res.json({ user: req.user });
+  } else {
+      res.status(401).json({ message: 'No hay sesión de usuario activa.' });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
